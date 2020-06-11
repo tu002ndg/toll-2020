@@ -14,6 +14,8 @@ public class PointDTOTest {
 
     private String expected = "{\"lat\":56.0,\"lon\":74.0,\"autoId\":\"o567gfd\",\"time\":1591911504689}";
     private String autoId ="o567gfd";
+    private double lat=56.0;
+    private double lon=74.0;
 
     @Test
     public void toJson() throws Exception {
@@ -34,6 +36,9 @@ public class PointDTOTest {
         PointDTO dto = mapper.readValue(expected, PointDTO.class);
         assertEquals(autoId, dto.getAutoId());
         assertEquals(1591911504689L, dto.getTime());
+        assertEquals(lat, dto.getLat(),0);
+        assertEquals(lon, dto.getLon(),0);
+
     }
 
 }
